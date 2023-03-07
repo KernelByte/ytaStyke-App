@@ -1,0 +1,12 @@
+{
+  "name": "ytastyle-app",
+  "version": "1.0.0",
+  "description": "REST API yta Style app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}

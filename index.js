@@ -12,7 +12,6 @@ app.get("/", (require, response) => {
   response.send("Inicio del server en Express.");
 });
 
-
 // Se le indica el puerto a la app
 app.listen(port, () => {
   console.log("Mi puerto es: " + port)

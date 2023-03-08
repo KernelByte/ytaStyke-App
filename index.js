@@ -1,8 +1,9 @@
 // Nos traemos a express
 const express = require("express");
-
-// Ejecutamod el metodo de express
+// Ejecutamos el metodo de express
 const app = express();
+//Traemos las rutas modularizadas
+const routerApi = require("./routes");
 
 // Añadimos el puerto por el que escuchara la app
 const port = 3000;
@@ -12,17 +13,7 @@ app.get("/", (request, response) => {
   response.send("Inicio del server en Express.");
 });
 
-// listar products
-app.get("/list_products", (request, response) => {
-  response.json([{name : "yoniher", age : 18}, {name : "Oscar", age : 23}]);
-});
-
-
-// Consultar un product
-app.get("/products/:id", (request, response) => {
-  const {id} = request.params;
-  response.json({id, name : "yoniher", age : 18});
-});
+routerApi(app);
 
 // Se le indica el puerto a la app
 app.listen(port, () => {

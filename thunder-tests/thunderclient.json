@@ -56,11 +56,13 @@
     "colId": "d8f95fb9-f310-4262-b8f7-5d8937fb13d2",
     "containerId": "",
     "name": "Borrar un producto",
-    "url": "",
-    "method": "GET",
+    "url": "http://localhost:3000/api/v1/products/289",
+    "method": "DELETE",
     "sortNum": 50000,
     "created": "2023-03-09T02:41:03.446Z",
-    "modified": "2023-03-09T02:41:03.446Z",
-    "headers": []
+    "modified": "2023-03-09T02:45:24.945Z",
+    "headers": [],
+    "params": [],
+    "tests": []
   }
 ]

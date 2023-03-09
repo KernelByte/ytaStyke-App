@@ -34,5 +34,15 @@ router.patch("/:id", (request, response) => {
   });
 });
 
+//Eliminar un producto
+router.delete("/:id", (request, response) => {
+  // se recibe id
+  const {id} = request.params;
+  response.json({
+    message : "Product delete",
+    id,
+  });
+});
+
 
 module.exports = router;

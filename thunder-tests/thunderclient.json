@@ -4,11 +4,11 @@
     "colId": "d8f95fb9-f310-4262-b8f7-5d8937fb13d2",
     "containerId": "",
     "name": "Listar productos",
-    "url": "http://localhost:3000/api/v1/products",
+    "url": "http://localhost:3000/api/v1/products/999",
     "method": "GET",
     "sortNum": 20000,
     "created": "2023-03-09T02:18:45.148Z",
-    "modified": "2023-03-09T02:18:56.754Z",
+    "modified": "2023-03-09T17:30:33.493Z",
     "headers": [],
     "params": [],
     "tests": []

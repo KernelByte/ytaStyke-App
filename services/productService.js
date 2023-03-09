@@ -6,8 +6,8 @@ class productService {
    };
 
    // Create a product
-   create() {
-
+   create(pro) {
+    this.products.push(pro);
    };
 
    // Find all products
@@ -21,13 +21,25 @@ class productService {
    };
 
    // Update a product
-   update() {
-
+   update(id, changes) {
+    const index = this.products.findIndex(product => product.id === id);
+    if (index === -1){
+      throw new Error("product not found");
+    }else{
+      this.products[index] = changes;
+      return {message : true};
+    }
    };
 
    // Delete a product
-   delete() {
-
+   delete(id) {
+    const index = this.products.findIndex(product => product.id === id);
+    if (index === -1){
+      throw new Error("product not found");
+    }else{
+      this.products.splice(index,1);
+      return {message : true};
+    }
    };
 
    generate() {

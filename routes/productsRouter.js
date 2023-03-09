@@ -27,10 +27,7 @@ router.get("/:id", (request, response) => {
 //Crear un nuevo producto
 router.post("/", (request, response) => {
   const bodyResponse = request.body;
-  response.status(201).json({
-    message: "User create",
-    data: bodyResponse
-  });
+  response.status(201).json(service.create(bodyResponse));
 });
 
 //Actualizar un dato del producto
@@ -38,21 +35,19 @@ router.patch("/:id", (request, response) => {
   // se recibe id
   const { id } = request.params;
   const bodyResponse = request.body;
-  response.json({
-    message: "Product update",
-    data: bodyResponse,
-    id,
-  });
+  // llamado al metodo
+  const productUpdate = service.update(id,bodyResponse);
+  response.json(productUpdate);
 });
 
 //Eliminar un producto
 router.delete("/:id", (request, response) => {
   // se recibe id
   const { id } = request.params;
-  response.json({
-    message: "Product delete",
-    id,
-  });
+  const bodyResponse = request.body;
+  // llamado al metodo
+  const productDelete = service.delete(id);
+  response.json(productDelete);
 });
 
 

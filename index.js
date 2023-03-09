@@ -7,6 +7,8 @@ const routerApi = require("./routes");
 
 // Añadimos el puerto por el que escuchara la app
 const port = 3000;
+// usamos middleware para recibir formato json en la app
+app.use(express.json());
 
 //iniciamos la app en la siguiente ruta
 app.get("/", (request, response) => {

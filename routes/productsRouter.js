@@ -13,4 +13,13 @@ router.get("/:id", (request, response) => {
   response.json({id, name : "yoniher", age : 18});
 });
 
+//Crear un nuevo producto
+router.post("/", (request, response) => {
+  const bodyResponse = request.body;
+  response.json({
+    message : "User create",
+    data : bodyResponse
+  });
+});
+
 module.exports = router;

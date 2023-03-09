@@ -22,4 +22,17 @@ router.post("/", (request, response) => {
   });
 });
 
+//Actualizar un dato del producto
+router.patch("/:id", (request, response) => {
+  // se recibe id
+  const {id} = request.params;
+  const bodyResponse = request.body;
+  response.json({
+    message : "Product update",
+    data : bodyResponse,
+    id,
+  });
+});
+
+
 module.exports = router;

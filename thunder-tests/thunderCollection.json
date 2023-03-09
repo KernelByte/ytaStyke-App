@@ -1,0 +1,13 @@
+[
+  {
+    "_id": "d8f95fb9-f310-4262-b8f7-5d8937fb13d2",
+    "colName": "API - yta Style",
+    "created": "2023-03-09T02:14:47.584Z",
+    "sortNum": 10000,
+    "folders": [],
+    "settings": {
+      "headers": [],
+      "tests": []
+    }
+  }
+]

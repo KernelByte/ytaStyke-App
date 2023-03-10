@@ -4,6 +4,8 @@ const express = require("express");
 const app = express();
 //Traemos las rutas modularizadas
 const routerApi = require("./routes");
+// Nos traemos el middleware de errores
+const { logErrors, errorHandler } = require("./middlewares/errorHandler");
 
 // Añadimos el puerto por el que escuchara la app
 const port = 3000;
@@ -16,6 +18,9 @@ app.get("/", (request, response) => {
 });
 
 routerApi(app);
+// Middleware se usa despues del router de la aplicacion
+app.use(logErrors);
+app.use(errorHandler);
 
 // Se le indica el puerto a la app
 app.listen(port, () => {

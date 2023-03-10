@@ -31,7 +31,7 @@ router.post('/', async (request, response) => {
 });
 
 //Actualizar un dato del producto
-router.patch('/:id', async (request, response) => {
+router.patch('/:id', async (request, response, next) => {
   try {
     // se recibe id
     const { id } = request.params;
@@ -40,7 +40,8 @@ router.patch('/:id', async (request, response) => {
     const productUpdate = await service.update(id, bodyResponse);
     response.json(productUpdate);
   } catch (error) {
-    response.status(404).json({ message: error.message });
+    //response.status(404).json({ message: error.message });
+    next(error);
   }
 });
 

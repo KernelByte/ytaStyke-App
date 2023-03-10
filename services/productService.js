@@ -10,17 +10,17 @@ class productService {
   }
 
   // Find all products
-  find() {
+  async find() {
     return this.products;
   }
 
   // Find one product
-  findOne(id) {
+  async findOne(id) {
     return this.products.find((product) => product.id === id);
   }
 
   // Update a product
-  update(id, changes) {
+  async update(id, changes) {
     const index = this.products.findIndex((product) => product.id === id);
     if (index === -1) {
       throw new Error('product not found');
@@ -35,7 +35,7 @@ class productService {
   }
 
   // Delete a product
-  delete(id) {
+  async delete(id) {
     const index = this.products.findIndex((product) => product.id === id);
     if (index === -1) {
       throw new Error('product not found');

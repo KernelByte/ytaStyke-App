@@ -1,3 +1,5 @@
+const getConnection = require("../libs/postgres");
+
 class productService {
   constructor() {
     this.products = [];
@@ -11,7 +13,9 @@ class productService {
 
   // Find all products
   async find() {
-    return this.products;
+    const client = await getConnection();
+    const res = await client.query("SELECT * FROM products");
+    return res.rows;
   }
 
   // Find one product

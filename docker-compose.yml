@@ -2,7 +2,12 @@ version: "3.3"
 
 services:
   postgres:
-    image: postgres:13
+    image: postgres:15
     environment:
       - POSTGRES_DB=yta_style
-      - POSGRES
+      - POSTGRES_USER=yta
+      - POSTGRES_PASSWORD=yta20394
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data

@@ -214,3 +214,5 @@ $RECYCLE.BIN/
 
 # directory thunder-test
 #thunder-tests/*
+
+postgres_data

@@ -11,3 +11,11 @@ services:
       - 5432:5432
     volumes:
       - ./postgres_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=yta@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=yta20394
+    ports:
+      - 5050:80

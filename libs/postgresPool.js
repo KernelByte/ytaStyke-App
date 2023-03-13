@@ -5,7 +5,7 @@ const pool = new Pool({
   port: 5432,
   user: 'user_yta',
   password: 'Yta20394',
-  database: 'ytaStyle_app',
+  database: 'db_ytaStyle',
 });
 
 module.exports = pool;

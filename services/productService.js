@@ -15,7 +15,7 @@ class productService {
 
   // Find all products
   async find() {
-    const query = "SELECT * FROM products";
+    const query = "SELECT * FROM public.products";
     const res = await this.pool.query(query);
     return res.rows;
   }

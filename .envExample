@@ -1,0 +1,6 @@
+PORT=3000
+DB_USER=""
+DB_HOST=""
+DB_PASS=""
+DB_DATA_BASE=""
+DB_PORT=""

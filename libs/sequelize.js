@@ -8,9 +8,9 @@ const PASS = encodeURIComponent(config.dbPassword);
 // Url de conexion
 const URI = `postgres://${USER}:${PASS}@${config.dbHost}:${config.dbPort}/${config.dbDataBase}`;
 // Pasamos la url de conexion completa
-const sequelize = new Sequelize({ URI,
-  dialect: "postgres",
+const sequelize = new Sequelize(URI, {
+  dialect: 'postgres',
   logging: true,
- });
+});
 
 module.exports = sequelize;

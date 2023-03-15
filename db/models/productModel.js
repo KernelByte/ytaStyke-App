@@ -3,9 +3,10 @@ const { Model, DataTypes, Sequelize } = require('sequelize');
 // Definimos la tabla
 const PRODUCT_TABLE = 'products';
 // Definimos el esquema de la base de datos
-const productSchema = {
+const ProductSchema = {
   id_product: {
     allowNull: false,
+    autoIncrement: true,
     primaryKey: true,
     type: DataTypes.INTEGER,
   },
@@ -56,4 +57,4 @@ class Product extends Model {
   }
 }
 
-module.exports = { PRODUCT_TABLE, productSchema, Product };
+module.exports = { PRODUCT_TABLE, ProductSchema, Product };

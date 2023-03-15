@@ -12,7 +12,7 @@ const ProductSchema = {
   },
   date_product: {
     allowNull: false,
-    type: DataTypes.DATE,
+    type: DataTypes.STRING,
   },
   name_product: {
     allowNull: false,
@@ -42,7 +42,7 @@ const ProductSchema = {
 
 class Product extends Model {
   //Metodo para declarar todas las relaciones
-  static associations() {
+  static associate() {
     //associate
   }
 

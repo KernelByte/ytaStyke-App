@@ -1,72 +1,44 @@
 // Conexion directa a sequelize
-const {models} = require('../libs/sequelize');
+const { models } = require('../libs/sequelize');
 
 class productService {
-  constructor() {
-    this.products = [];
-    this.generate();
-  }
+  constructor() {}
 
   // Create a product
-  create(pro) {
-    this.products.push(pro);
+  async create(pro) {
+    const queryNewProduct = await models.Product.create(pro);
+    return { message: 'Producto Creado' };
   }
 
   // Find all products
   async find() {
-    const query = await models.Product.findAll();
-    return query;
+    const queryAll = await models.Product.findAll();
+    return queryAll;
   }
 
   // Find one product
   async findOne(id) {
-    return this.products.find((product) => product.id === id);
+    const findProduct = await models.Product.findByPk(id);
+    if (!findProduct) {
+      throw new Error('product not found');
+    } else {
+      return findProduct;
+    }
   }
 
   // Update a product
   async update(id, changes) {
-    const index = this.products.findIndex((product) => product.id === id);
-    if (index === -1) {
-      throw new Error('product not found');
-    } else {
-      const pro = this.products[index];
-      this.products[index] = {
-        ...pro,
-        ...changes,
-      };
-      return { message: true };
-    }
+    // Busqueda del producto a actualizar
+    const findProduct = await this.findOne(id);
+    await findProduct.update(changes);
   }
 
   // Delete a product
   async delete(id) {
-    const index = this.products.findIndex((product) => product.id === id);
-    if (index === -1) {
-      throw new Error('product not found');
-    } else {
-      this.products.splice(index, 1);
-      return { message: true };
-    }
-  }
-
-  generate() {
-    this.products.push(
-      {
-        id: '10',
-        name: 'yoniher',
-        age: 18,
-      },
-      {
-        id: '20',
-        name: 'Oscar',
-        age: 19,
-      },
-      {
-        id: '30',
-        name: 'Luis',
-        age: 20,
-      }
-    );
+    // Busqueda del producto a actualizar
+    const findProduct = await this.findOne(id);
+    await findProduct.destroy();
+    return { message: true };
   }
 }
 

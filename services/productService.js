@@ -1,4 +1,6 @@
-const sequelize = require('../libs/sequelize');
+// Conexion directa a sequelize
+//const sequelize = require('../libs/sequelize');
+const {models} = require('../libs/sequelize');
 
 class productService {
   constructor() {

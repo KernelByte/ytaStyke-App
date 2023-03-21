@@ -16,6 +16,6 @@ const sequelize = new Sequelize(URI, {
 
 setupModels(sequelize);
 
-sequelize.sync();
+//sequelize.sync(); Se cancela proceso de sincronizacion automatica de todo
 
 module.exports = sequelize;

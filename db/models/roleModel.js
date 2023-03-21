@@ -1,7 +1,7 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 
 // Definimos la tabla
-const ROLE_TABLE = 'roles';
+const ROLES_TABLE = 'roles';
 
 // Definimos el esquema de la base de datos
 const RoleSchema = {
@@ -27,11 +27,11 @@ class Role extends Model {
   static config(sequelize) {
     return {
       sequelize,
-      tableName: ROLE_TABLE,
+      tableName: ROLES_TABLE,
       modelName: 'Role',
       timestamps: false,
     };
   }
 }
 
-module.exports = { ROLE_TABLE, RoleSchema, Role };
+module.exports = { ROLES_TABLE, RoleSchema, Role };

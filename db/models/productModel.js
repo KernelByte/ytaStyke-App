@@ -1,7 +1,7 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 
 // Definimos la tabla
-const PRODUCT_TABLE = 'products';
+const PRODUCTS_TABLE = 'products';
 
 // Definimos el esquema de la base de datos
 const ProductSchema = {
@@ -51,11 +51,11 @@ class Product extends Model {
   static config(sequelize) {
     return {
       sequelize,
-      tableName: PRODUCT_TABLE,
+      tableName: PRODUCTS_TABLE,
       modelName: 'Product',
       timestamps: false,
     };
   }
 }
 
-module.exports = { PRODUCT_TABLE, ProductSchema, Product };
+module.exports = { PRODUCTS_TABLE, ProductSchema, Product };

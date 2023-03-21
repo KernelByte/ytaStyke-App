@@ -2,6 +2,7 @@ const { Model, DataTypes, Sequelize } = require('sequelize');
 
 // Definimos la tabla
 const PRODUCT_TABLE = 'products';
+
 // Definimos el esquema de la base de datos
 const ProductSchema = {
   id_product: {

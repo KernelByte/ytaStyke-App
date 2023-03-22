@@ -1,5 +1,5 @@
 const {Product, ProductSchema} = require("./productModel");
-const {Buy, buySchema} = require("./buyModel");
+const {Buy, BuySchema} = require("./buyModel");
 const {Group, GroupSchema} = require("./groupModel");
 const {PriceProduct, PriceProductSchema} = require("./priceProductModel");
 const {Role, RoleSchema} = require("./roleModel");
@@ -8,7 +8,7 @@ const {User, UserSchema} = require("./userModel");
 
 function setupModels(sequelize){
   Product.init(ProductSchema,Product.config(sequelize));
-  Buy.init(buySchema,Buy.config(sequelize));
+  Buy.init(BuySchema,Buy.config(sequelize));
   Group.init(GroupSchema,Group.config(sequelize));
   PriceProduct.init(PriceProductSchema,PriceProduct.config(sequelize));
   Role.init(RoleSchema,Role.config(sequelize));

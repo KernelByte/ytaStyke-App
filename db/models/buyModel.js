@@ -55,4 +55,4 @@ class Buy extends Model {
   }
 }
 
-module.exports = { BUYS_TABLE, buySchema, Buy };
+module.exports = { BUYS_TABLE, BuySchema, Buy };

@@ -6,7 +6,7 @@ const productsRouter = require("./productsRouter");
 //const rolesRouter = require("./rolesRouter");
 //const buysRouter = require("./buysRouter");
 //const statusRouter = require("./statusRouter");
-//const groupsRouter = require("./groupsRouter");
+const usersRouter = require("./usersRouter");
 
 function routerApi(app){
   // Ruta maestra
@@ -18,7 +18,7 @@ function routerApi(app){
   //router.use("/roles",rolesRouter);
   //router.use("/buys",buysRouter);
   //router.use("/status",statusRouter)
-  //router.use("/groups",groupsRouter)
+  router.use("/users",usersRouter);
 }
 
 module.exports = routerApi;

@@ -14,6 +14,10 @@ function setupModels(sequelize){
   Role.init(RoleSchema,Role.config(sequelize));
   Statu.init(StatuSchema,Statu.config(sequelize));
   User.init(UserSchema,User.config(sequelize));
+
+  // Asociaciones
+  Role.associate(sequelize.models);
+  User.associate(sequelize.models);
 };
 
 module.exports = setupModels;

@@ -19,8 +19,11 @@ const RoleSchema = {
 
 class Role extends Model {
   //Metodo para declarar todas las relaciones
-  static associate() {
-    //associate
+  static associate(models) {
+    this.hasMany(models.User, {
+      as: 'users',
+      foreignKey: 'id_role_user',
+    });
   }
 
   //Metodo para configuracion

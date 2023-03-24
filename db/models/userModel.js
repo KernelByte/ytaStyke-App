@@ -1,4 +1,5 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
+const { ROLES_TABLE } = require('./roleModel');
 
 // Definimos la tabla
 const USERS_TABLE = 'users';
@@ -35,13 +36,21 @@ const UserSchema = {
   id_role_user: {
     allowNull: false,
     type: DataTypes.INTEGER,
+    references: {
+      model: ROLES_TABLE,
+      key: 'id_role',
+    },
+    onUpdate: 'CASCADE',
+    onDelete: 'SET NULL',
   },
 };
 
 class User extends Model {
   //Metodo para declarar todas las relaciones
-  static associate() {
-    //associate
+  static associate(models) {
+    this.belongsTo(models.Role, {
+      as: 'role',
+    });
   }
 
   //Metodo para configuracion

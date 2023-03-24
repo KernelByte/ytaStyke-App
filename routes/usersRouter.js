@@ -52,7 +52,7 @@ router.patch('/:id', async (request, response, next) => {
 router.delete('/:id', async (request, response) => {
   // se recibe id
   const { id } = request.params;
-  const bodyResponse = request.body;
+  //const bodyResponse = request.body;
   // llamado al metodo
   const userDelete = await service.delete(id);
   response.json(userDelete);

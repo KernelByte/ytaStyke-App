@@ -29,6 +29,10 @@ class Statu extends Model {
     this.belongsTo(models.Buy, {
       as: 'buy',
     });
+
+    this.belongsTo(models.Product, {
+      as: 'product',
+    });
   }
 
   //Metodo para configuracion

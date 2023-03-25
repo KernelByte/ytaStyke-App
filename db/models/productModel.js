@@ -1,5 +1,6 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 const { GROUPS_TABLE } = require('./groupModel');
+const { STATUS_TABLE } = require('./statuModel');
 
 // Definimos la tabla
 const PRODUCTS_TABLE = 'products';
@@ -45,6 +46,12 @@ const ProductSchema = {
   id_status_product: {
     allowNull: false,
     type: DataTypes.INTEGER,
+    references: {
+      model: STATUS_TABLE,
+      key: 'id_status',
+    },
+    onUpdate: 'CASCADE',
+    onDelete: 'SET NULL',
   },
 };
 
@@ -54,6 +61,11 @@ class Product extends Model {
     this.hasMany(models.Group, {
       as: 'group',
       foreignKey: 'id_group_product',
+    });
+
+    this.hasMany(models.Statu, {
+      as: 'statu',
+      foreignKey: 'id_status_product',
     });
   }
 

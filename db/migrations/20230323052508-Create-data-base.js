@@ -2,7 +2,7 @@
 
 const { BuySchema, BUYS_TABLE } = require('./../models/buyModel');
 const { GroupSchema, GROUPS_TABLE } = require('./../models/groupModel');
-const { PriceProductSchema, PRICE_PRODUCTS_TABLE } = require('./../models/priceProductModel');
+const { PriceProductSchema, PRICE_PRODUCTS_TABLE, } = require('./../models/priceProductModel');
 const { ProductSchema, PRODUCTS_TABLE } = require('./../models/productModel');
 const { RoleSchema, ROLES_TABLE } = require('./../models/roleModel');
 const { StatuSchema, STATUS_TABLE } = require('./../models/statuModel');
@@ -28,6 +28,5 @@ module.exports = {
     await queryInterface.dropTable(PRICE_PRODUCTS_TABLE);
     await queryInterface.dropTable(PRODUCTS_TABLE);
     await queryInterface.dropTable(STATUS_TABLE);
-
   },
 };

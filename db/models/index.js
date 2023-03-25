@@ -23,6 +23,7 @@ function setupModels(sequelize){
   Group.associate(sequelize.models);
   Statu.associate(sequelize.models);
   Product.associate(sequelize.models);
+  PriceProduct.associate(sequelize.models);
 
 };
 

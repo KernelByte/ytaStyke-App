@@ -20,6 +20,7 @@ function setupModels(sequelize){
   Role.associate(sequelize.models);
   User.associate(sequelize.models);
   Buy.associate(sequelize.models);
+  Group.associate(sequelize.models);
 
 };
 

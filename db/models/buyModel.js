@@ -1,6 +1,8 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 const { USERS_TABLE } = require('./userModel');
 const { GROUPS_TABLE } = require('./groupModel');
+const { STATUS_TABLE } = require('./statuModel');
+
 
 // Definimos la tabla
 const BUYS_TABLE = 'buys';
@@ -39,9 +41,12 @@ const BuySchema = {
 
   id_payment_status:{
     type: DataTypes.INTEGER,
-    references:{
-
-    }
+    /*references: {
+      model: STATUS_TABLE,
+      key: 'id_status',
+    },
+    onUpdate: 'CASCADE',
+    onDelete: 'SET NULL',*/
   },
 
   id_user_buy:{
@@ -60,6 +65,11 @@ class Buy extends Model {
   static associate() {
     this.belongsTo(models.User, {
       as: 'user',
+    });
+
+    this.hasMany(models.Group, {
+      as: 'group',
+      foreignKey: 'id_group_buy',
     });
   }
 

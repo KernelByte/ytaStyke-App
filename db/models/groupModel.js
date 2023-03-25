@@ -23,6 +23,14 @@ class Group extends Model {
     this.belongsTo(models.Buy, {
       as: 'buy',
     });
+
+    this.belongsTo(models.Product, {
+      as: 'product',
+    });
+
+    this.belongsTo(models.PriceProduct, {
+      as: 'priceProduct',
+    });
   }
 
   //Metodo para configuracion

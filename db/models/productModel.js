@@ -1,4 +1,5 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
+const { GROUPS_TABLE } = require('./groupModel');
 
 // Definimos la tabla
 const PRODUCTS_TABLE = 'products';
@@ -34,6 +35,12 @@ const ProductSchema = {
   id_group_product: {
     allowNull: false,
     type: DataTypes.INTEGER,
+    references: {
+      model: GROUPS_TABLE,
+      key: 'id_group',
+    },
+    onUpdate: 'CASCADE',
+    onDelete: 'SET NULL',
   },
   id_status_product: {
     allowNull: false,
@@ -44,7 +51,10 @@ const ProductSchema = {
 class Product extends Model {
   //Metodo para declarar todas las relaciones
   static associate() {
-    //associate
+    this.hasMany(models.Group, {
+      as: 'group',
+      foreignKey: 'id_group_product',
+    });
   }
 
   //Metodo para configuracion

@@ -51,6 +51,11 @@ class User extends Model {
     this.belongsTo(models.Role, {
       as: 'role',
     });
+
+    this.hasMany(models.Buy, {
+      as: 'buys',
+      foreignKey: 'id_user_buy',
+    });
   }
 
   //Metodo para configuracion

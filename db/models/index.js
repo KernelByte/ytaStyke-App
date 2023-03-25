@@ -7,17 +7,20 @@ const {Statu, StatuSchema} = require("./statuModel");
 const {User, UserSchema} = require("./userModel");
 
 function setupModels(sequelize){
+  User.init(UserSchema,User.config(sequelize));
+  Role.init(RoleSchema,Role.config(sequelize));
   Product.init(ProductSchema,Product.config(sequelize));
   Buy.init(BuySchema,Buy.config(sequelize));
   Group.init(GroupSchema,Group.config(sequelize));
   PriceProduct.init(PriceProductSchema,PriceProduct.config(sequelize));
-  Role.init(RoleSchema,Role.config(sequelize));
   Statu.init(StatuSchema,Statu.config(sequelize));
-  User.init(UserSchema,User.config(sequelize));
+
 
   // Asociaciones
   Role.associate(sequelize.models);
   User.associate(sequelize.models);
+  Buy.associate(sequelize.models);
+
 };
 
 module.exports = setupModels;

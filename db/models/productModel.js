@@ -57,7 +57,7 @@ const ProductSchema = {
 
 class Product extends Model {
   //Metodo para declarar todas las relaciones
-  static associate() {
+  static associate(models) {
     this.hasMany(models.Group, {
       as: 'group',
       foreignKey: 'id_group_product',

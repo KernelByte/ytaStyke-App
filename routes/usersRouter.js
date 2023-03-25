@@ -9,13 +9,13 @@ const userService = require('./../services/userService');
 const service = new userService();
 
 // list users
-router.get('/', async (request, response) => {
+/*router.get('/', async (request, response) => {
   const users = await service.find();
   response.json(users);
-});
+});*/
 
 // Find un user
-router.get('/:id', async (request, response) => {
+/*router.get('/:id', async (request, response) => {
   const { id } = request.params;
   const user = await service.findOne(id);
   if (id === '999') {
@@ -25,7 +25,7 @@ router.get('/:id', async (request, response) => {
   } else {
     response.status(200).json(user);
   }
-});
+});*/
 
 //create one user
 router.post('/', async (request, response) => {
@@ -34,7 +34,7 @@ router.post('/', async (request, response) => {
 });
 
 //Update user
-router.patch('/:id', async (request, response, next) => {
+/*router.patch('/:id', async (request, response, next) => {
   try {
     // se recibe id
     const { id } = request.params;
@@ -46,16 +46,16 @@ router.patch('/:id', async (request, response, next) => {
     //response.status(404).json({ message: error.message });
     next(error);
   }
-});
+});*/
 
 //delete user
-router.delete('/:id', async (request, response) => {
+/*router.delete('/:id', async (request, response) => {
   // se recibe id
   const { id } = request.params;
   //const bodyResponse = request.body;
   // llamado al metodo
   const userDelete = await service.delete(id);
   response.json(userDelete);
-});
+});*/
 
 module.exports = router;

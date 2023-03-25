@@ -1,8 +1,8 @@
 // Conexion directa a sequelize
 const { models } = require('../libs/sequelize');
 
-class userService{
-  constructor() {};
+class userService {
+  constructor() {}
 
   // Create a user
   async create(user) {
@@ -10,3 +10,5 @@ class userService{
     return { message: 'Usuario Creado' };
   }
 }
+
+module.exports = userService;

@@ -41,12 +41,12 @@ const BuySchema = {
 
   id_payment_status:{
     type: DataTypes.INTEGER,
-    /*references: {
+    references: {
       model: STATUS_TABLE,
       key: 'id_status',
     },
     onUpdate: 'CASCADE',
-    onDelete: 'SET NULL',*/
+    onDelete: 'SET NULL',
   },
 
   id_user_buy:{
@@ -70,6 +70,11 @@ class Buy extends Model {
     this.hasMany(models.Group, {
       as: 'group',
       foreignKey: 'id_group_buy',
+    });
+
+    this.hasMany(models.Statu, {
+      as: 'statu',
+      foreignKey: 'id_payment_status',
     });
   }
 

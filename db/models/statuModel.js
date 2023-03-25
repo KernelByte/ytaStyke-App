@@ -26,7 +26,9 @@ const StatuSchema = {
 class Statu extends Model {
   //Metodo para declarar todas las relaciones
   static associate() {
-    //associate
+    this.belongsTo(models.Buy, {
+      as: 'buy',
+    });
   }
 
   //Metodo para configuracion

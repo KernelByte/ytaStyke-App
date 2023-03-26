@@ -196,12 +196,12 @@
     "method": "POST",
     "sortNum": 30000,
     "created": "2023-03-26T15:31:39.428Z",
-    "modified": "2023-03-26T15:33:22.227Z",
+    "modified": "2023-03-26T19:06:44.310Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "  {\n    \"description\": \"Cliente\"\n  }",
+      "raw": "  {\n    \"number_id\": 4534345,\n    \"name_user\":\"Oscar Martinez\",\n    \"email\": \"oca23_56@gmail.com\",\n    \"password_user\": \"1234\",\n    \"id_role_user\": 3\n  }",
       "form": []
     },
     "tests": []
@@ -215,12 +215,12 @@
     "method": "PATCH",
     "sortNum": 40000,
     "created": "2023-03-26T15:31:39.429Z",
-    "modified": "2023-03-26T15:34:02.169Z",
+    "modified": "2023-03-26T19:07:39.732Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n    \"description\": \"constumer\"\n}",
+      "raw": " {\n    \"password_user\": \"12345\"\n  }",
       "form": []
     },
     "tests": []

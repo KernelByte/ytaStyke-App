@@ -48,9 +48,9 @@ const UserSchema = {
 class User extends Model {
   //Metodo para declarar todas las relaciones
   static associate(models) {
-    this.belongsTo(models.Role, {
+    /*this.belongsTo(models.Role, {
       as: 'role',
-    });
+    });*/
 
     this.hasMany(models.Buy, {
       as: 'buys',

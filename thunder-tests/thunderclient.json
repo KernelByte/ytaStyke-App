@@ -78,5 +78,85 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "edd10890-58de-4014-93cf-dd60f6b5737c",
+    "colId": "fa61306b-1c68-447e-90cd-35f5a2d76ce9",
+    "containerId": "",
+    "name": "Listar roles",
+    "url": "http://localhost:3000/api/v1/roles/",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2023-03-26T04:15:51.694Z",
+    "modified": "2023-03-26T04:28:46.072Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "abac36f9-65c5-4b54-803f-d7acb2175082",
+    "colId": "fa61306b-1c68-447e-90cd-35f5a2d76ce9",
+    "containerId": "",
+    "name": "Listar un producto",
+    "url": "http://localhost:3000/api/v1/products/4",
+    "method": "GET",
+    "sortNum": 25000,
+    "created": "2023-03-26T04:15:51.695Z",
+    "modified": "2023-03-26T04:15:51.695Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "83913eed-c72e-46a8-b94f-8b1674bcd329",
+    "colId": "fa61306b-1c68-447e-90cd-35f5a2d76ce9",
+    "containerId": "",
+    "name": "Crear rol",
+    "url": "http://localhost:3000/api/v1/roles",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2023-03-26T04:15:51.696Z",
+    "modified": "2023-03-26T04:29:41.400Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "  {\n    \"description\": \"\"\n  }",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "2f730cbc-c540-4397-a4b8-d59dc61d3cff",
+    "colId": "fa61306b-1c68-447e-90cd-35f5a2d76ce9",
+    "containerId": "",
+    "name": "Actualizar producto",
+    "url": "http://localhost:3000/api/v1/products/4",
+    "method": "PATCH",
+    "sortNum": 40000,
+    "created": "2023-03-26T04:15:51.697Z",
+    "modified": "2023-03-26T04:15:51.697Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"id_product\": 4,\n    \"quantity\": 5\n  }",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "fcc318a4-c4f8-4399-9030-ee744aaecc41",
+    "colId": "fa61306b-1c68-447e-90cd-35f5a2d76ce9",
+    "containerId": "",
+    "name": "Borrar un producto",
+    "url": "http://localhost:3000/api/v1/products/4",
+    "method": "DELETE",
+    "sortNum": 50000,
+    "created": "2023-03-26T04:15:51.698Z",
+    "modified": "2023-03-26T04:15:51.698Z",
+    "headers": [],
+    "params": [],
+    "tests": []
   }
 ]

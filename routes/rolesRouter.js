@@ -13,10 +13,48 @@ router.post('/', async (request, response) => {
   response.status(201).json(await service.create(bodyResponse));
 });
 
-// listar roles
+// list roles
 router.get('/', async (request, response) => {
   const roles = await service.find();
   response.json(roles);
+});
+
+// Find a rol
+router.get('/:id', async (request, response) => {
+  const { id } = request.params;
+  const role = await service.findOne(id);
+  if (id === '999') {
+    response.status(404).json({
+      message: 'Not Found',
+    });
+  } else {
+    response.status(200).json(role);
+  }
+});
+
+//Update data a role
+router.patch('/:id', async (request, response, next) => {
+  try {
+    // se recibe id
+    const { id } = request.params;
+    const bodyResponse = request.body;
+    // llamado al metodo
+    const roleUpdate = await service.update(id, bodyResponse);
+    response.json(roleUpdate);
+  } catch (error) {
+    //response.status(404).json({ message: error.message });
+    next(error);
+  }
+});
+
+//Delete role
+router.delete('/:id', async (request, response) => {
+  // se recibe id
+  const { id } = request.params;
+  const bodyResponse = request.body;
+  // llamado al metodo
+  const roleDelete = await service.delete(id);
+  response.json(roleDelete);
 });
 
 module.exports = router;

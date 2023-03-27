@@ -33,29 +33,29 @@ router.get('/:id', async (request, response) => {
   }
 });
 
-//Update user
+//Update buy
 router.patch('/:id', async (request, response, next) => {
   try {
     // se recibe id
     const { id } = request.params;
     const bodyResponse = request.body;
     // llamado al metodo
-    const userUpdate = await service.update(id, bodyResponse);
-    response.json(userUpdate);
+    const buyUpdate = await service.update(id, bodyResponse);
+    response.json(buyUpdate);
   } catch (error) {
     //response.status(404).json({ message: error.message });
     next(error);
   }
 });
 
-//delete user
+//delete buy
 router.delete('/:id', async (request, response) => {
   // se recibe id
   const { id } = request.params;
   //const bodyResponse = request.body;
   // llamado al metodo
-  const userDelete = await service.delete(id);
-  response.json(userDelete);
+  const buyDelete = await service.delete(id);
+  response.json(buyDelete);
 });
 
 module.exports = router;

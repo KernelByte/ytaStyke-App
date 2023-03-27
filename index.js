@@ -2,6 +2,9 @@
 const express = require('express');
 // Ejecutamos el metodo de express
 const app = express();
+// Nos traemos la funcion de autentificacion
+const { checkApiKey } = require("./middlewares/authHandler");
+
 // Nos traemos a la libreria de cors
 //const cors = require("cors");
 //Traemos las rutas modularizadas
@@ -26,8 +29,12 @@ app.use(express.json());
 };*/
 //app.use(cors(options));
 
+app.get('/prueba', checkApiKey, (request, response) => {
+  response.send('Otra Ruta.');
+});
+
 //iniciamos la app en la siguiente ruta
-app.get('/', (request, response) => {
+app.get('/', checkApiKey, (request, response) => {
   response.send('Inicio del server en Express.');
 });
 

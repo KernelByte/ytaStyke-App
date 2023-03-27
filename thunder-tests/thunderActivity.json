@@ -4,12 +4,27 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:3000/api/v1/products",
-    "url": "http://localhost:3000/api/v1/products",
+    "url": "http://localhost:3000/prueba",
     "method": "GET",
     "sortNum": 0,
     "created": "2023-03-09T02:16:54.088Z",
-    "modified": "2023-03-09T02:16:54.088Z",
-    "headers": [],
+    "modified": "2023-03-27T23:49:00.397Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      },
+      {
+        "name": "api",
+        "value": "20394"
+      }
+    ],
     "params": [],
     "tests": []
   }

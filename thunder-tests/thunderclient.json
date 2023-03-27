@@ -116,7 +116,7 @@
     "method": "POST",
     "sortNum": 30000,
     "created": "2023-03-26T04:15:51.696Z",
-    "modified": "2023-03-26T15:17:21.302Z",
+    "modified": "2023-03-27T21:08:45.998Z",
     "headers": [],
     "params": [],
     "body": {
@@ -196,12 +196,12 @@
     "method": "POST",
     "sortNum": 30000,
     "created": "2023-03-26T15:31:39.428Z",
-    "modified": "2023-03-26T19:06:44.310Z",
+    "modified": "2023-03-27T21:10:15.519Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "  {\n    \"number_id\": 4534345,\n    \"name_user\":\"Oscar Martinez\",\n    \"email\": \"oca23_56@gmail.com\",\n    \"password_user\": \"1234\",\n    \"id_role_user\": 3\n  }",
+      "raw": "  {\n    \"number_id\": 1113587765,\n    \"name_user\":\"Yoniher Melendez\",\n    \"email\": \"yonihermelendez@gmail.com\",\n    \"password_user\": \"Hack\",\n    \"id_role_user\": 1\n  }",
       "form": []
     },
     "tests": []
@@ -235,86 +235,6 @@
     "sortNum": 50000,
     "created": "2023-03-26T15:31:39.430Z",
     "modified": "2023-03-26T15:34:11.615Z",
-    "headers": [],
-    "params": [],
-    "tests": []
-  },
-  {
-    "_id": "b1de51fa-6f46-4d42-a828-bd1e448bd930",
-    "colId": "4c1d4d66-57cd-48aa-b827-09f981504ccc",
-    "containerId": "",
-    "name": "Listar Buys",
-    "url": "http://localhost:3000/api/v1/buys/",
-    "method": "GET",
-    "sortNum": 20000,
-    "created": "2023-03-27T01:30:04.292Z",
-    "modified": "2023-03-27T01:30:59.488Z",
-    "headers": [],
-    "params": [],
-    "tests": []
-  },
-  {
-    "_id": "b4a895ce-a6e7-4b38-a277-fe407f8f149a",
-    "colId": "4c1d4d66-57cd-48aa-b827-09f981504ccc",
-    "containerId": "",
-    "name": "Find a buy",
-    "url": "http://localhost:3000/api/v1/users/3",
-    "method": "GET",
-    "sortNum": 25000,
-    "created": "2023-03-27T01:30:04.293Z",
-    "modified": "2023-03-27T01:30:04.293Z",
-    "headers": [],
-    "params": [],
-    "tests": []
-  },
-  {
-    "_id": "464bfee9-56d2-4a4a-af19-991237f0a627",
-    "colId": "4c1d4d66-57cd-48aa-b827-09f981504ccc",
-    "containerId": "",
-    "name": "Create a buy",
-    "url": "http://localhost:3000/api/v1/users",
-    "method": "POST",
-    "sortNum": 30000,
-    "created": "2023-03-27T01:30:04.294Z",
-    "modified": "2023-03-27T01:30:04.294Z",
-    "headers": [],
-    "params": [],
-    "body": {
-      "type": "json",
-      "raw": "  {\n    \"number_id\": 4534345,\n    \"name_user\":\"Oscar Martinez\",\n    \"email\": \"oca23_56@gmail.com\",\n    \"password_user\": \"1234\",\n    \"id_role_user\": 3\n  }",
-      "form": []
-    },
-    "tests": []
-  },
-  {
-    "_id": "ec5dab25-610d-40d1-b2c5-d4f2fc3743c1",
-    "colId": "4c1d4d66-57cd-48aa-b827-09f981504ccc",
-    "containerId": "",
-    "name": "Update a buy",
-    "url": "http://localhost:3000/api/v1/users/2",
-    "method": "PATCH",
-    "sortNum": 40000,
-    "created": "2023-03-27T01:30:04.295Z",
-    "modified": "2023-03-27T01:30:04.295Z",
-    "headers": [],
-    "params": [],
-    "body": {
-      "type": "json",
-      "raw": " {\n    \"password_user\": \"12345\"\n  }",
-      "form": []
-    },
-    "tests": []
-  },
-  {
-    "_id": "f3841f7c-d5d3-417e-8c70-33011cc0f2c7",
-    "colId": "4c1d4d66-57cd-48aa-b827-09f981504ccc",
-    "containerId": "",
-    "name": "Delete a buy",
-    "url": "http://localhost:3000/api/v1/users/2",
-    "method": "DELETE",
-    "sortNum": 50000,
-    "created": "2023-03-27T01:30:04.296Z",
-    "modified": "2023-03-27T01:30:04.296Z",
     "headers": [],
     "params": [],
     "tests": []

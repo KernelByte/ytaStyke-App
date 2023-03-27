@@ -63,9 +63,9 @@ const BuySchema = {
 class Buy extends Model {
   //Metodo para declarar todas las relaciones
   static associate(models) {
-    this.belongsTo(models.User, {
+    /*this.belongsTo(models.User, {
       as: 'user',
-    });
+    });*/
 
     this.hasMany(models.Group, {
       as: 'group',

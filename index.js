@@ -29,12 +29,12 @@ app.use(express.json());
 };*/
 //app.use(cors(options));
 
-app.get('/prueba', checkApiKey, (request, response) => {
+/*app.get('/prueba', checkApiKey, (request, response) => {
   response.send('Otra Ruta.');
-});
+});*/
 
 //iniciamos la app en la siguiente ruta
-app.get('/', checkApiKey, (request, response) => {
+app.get('/', (request, response) => {
   response.send('Inicio del server en Express.');
 });
 

@@ -196,12 +196,12 @@
     "method": "POST",
     "sortNum": 30000,
     "created": "2023-03-26T15:31:39.428Z",
-    "modified": "2023-03-27T21:10:15.519Z",
+    "modified": "2023-03-28T00:34:02.110Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "  {\n    \"number_id\": 1113587765,\n    \"name_user\":\"Yoniher Melendez\",\n    \"email\": \"yonihermelendez@gmail.com\",\n    \"password_user\": \"Hack\",\n    \"id_role_user\": 1\n  }",
+      "raw": "  {\n    \"number_id\": 1113629843,\n    \"name_user\":\"Alejandra Aguirre Giraldo\",\n    \"email\": \"aleja.aguirre09@gmail.com\",\n    \"password_user\": \"aleja123\",\n    \"id_role_user\": 1\n  }",
       "form": []
     },
     "tests": []

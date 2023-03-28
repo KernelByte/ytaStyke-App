@@ -4,3 +4,5 @@ const passport = require("passport");
 const LocalStrategy = require("./strategies/localStrategy");
 // Se hace uso de la estrategia traida
 passport.use(LocalStrategy);
+
+module.exports = passport

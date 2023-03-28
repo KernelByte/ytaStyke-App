@@ -8,10 +8,18 @@ const router = express.Router();
 // Se realiza instancia del servicio user
 const service = new userService();
 
+// Validaciones para el user
+const validatorHandler = require('./../middlewares/validatorHandler');
+const {
+  updateUserSchema,
+  createUserSchema,
+  getUserSchema,
+} = require('./../schemas/userSchema');
+
 //create a user
-router.post('/', /*async (request, response) => {
-  const bodyResponse = request.body;
-  response.status(201).json(await service.create(bodyResponse));*/
+router.post(
+  '/',
+  validatorHandler(createUserSchema, 'body'),
   async (req, res, next) => {
     try {
       const bodyResponse = req.body;
@@ -21,8 +29,6 @@ router.post('/', /*async (request, response) => {
       next(error);
     }
   }
-
-//}
 );
 
 // list users
@@ -45,28 +51,39 @@ router.get('/:id', async (request, response) => {
 });
 
 //Update user
-router.patch('/:id', async (request, response, next) => {
-  try {
-    // se recibe id
-    const { id } = request.params;
-    const bodyResponse = request.body;
-    // llamado al metodo
-    const userUpdate = await service.update(id, bodyResponse);
-    response.json(userUpdate);
-  } catch (error) {
-    //response.status(404).json({ message: error.message });
-    next(error);
+router.patch(
+  '/:id',
+  validatorHandler(getUserSchema, 'params'),
+  validatorHandler(updateUserSchema, 'body'),
+  async (request, response, next) => {
+    try {
+      // se recibe id
+      const { id } = request.params;
+      const bodyResponse = request.body;
+      // llamado al metodo
+      const userUpdate = await service.update(id, bodyResponse);
+      response.json(userUpdate);
+    } catch (error) {
+      next(error);
+    }
   }
-});
+);
 
 //delete user
-router.delete('/:id', async (request, response) => {
-  // se recibe id
-  const { id } = request.params;
-  //const bodyResponse = request.body;
-  // llamado al metodo
-  const userDelete = await service.delete(id);
-  response.json(userDelete);
-});
+router.delete(
+  '/:id',
+  validatorHandler(getUserSchema, 'params'),
+  async (request, response, next) => {
+    try {
+      // se recibe id
+      const { id } = request.params;
+      // llamado al metodo
+      const userDelete = await service.delete(id);
+      response.json(userDelete);
+    } catch (error) {
+      next(error);
+    }
+  }
+);
 
 module.exports = router;

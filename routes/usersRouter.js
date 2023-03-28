@@ -19,7 +19,7 @@ const {
 //create a user
 router.post(
   '/',
-  validatorHandler(createUserSchema, 'body'),
+  //validatorHandler(createUserSchema, 'body'),
   async (req, res, next) => {
     try {
       const bodyResponse = req.body;

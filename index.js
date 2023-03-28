@@ -4,13 +4,18 @@ const express = require('express');
 const app = express();
 // Nos traemos la funcion de autentificacion
 const { checkApiKey } = require("./middlewares/authHandler");
+//const passport = require('passport')
+//app.use(passport.initialize());
+
+// Nos traemos el middleware de errores
+const { logErrors, errorHandler, boomErrorHandler, ormErrorHandler } = require('./middlewares/errorHandler');
 
 // Nos traemos a la libreria de cors
 //const cors = require("cors");
+//require('./utils/auth');
 //Traemos las rutas modularizadas
 const routerApi = require('./routes');
-// Nos traemos el middleware de errores
-const { logErrors, errorHandler, ormErrorHandler } = require('./middlewares/errorHandler');
+
 
 // Añadimos el puerto por el que escuchara la app
 const port = 3000;
@@ -41,8 +46,10 @@ app.get('/', (request, response) => {
 routerApi(app);
 // Middleware se usa despues del router de la aplicacion
 app.use(logErrors);
-app.use(ormErrorHandler);
+app.use(boomErrorHandler);
 app.use(errorHandler);
+app.use(ormErrorHandler);
+
 
 // Se le indica el puerto a la app
 app.listen(port, () => {

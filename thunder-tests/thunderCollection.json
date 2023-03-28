@@ -33,14 +33,10 @@
     }
   },
   {
-    "_id": "4c1d4d66-57cd-48aa-b827-09f981504ccc",
-    "colName": "request - Buys",
-    "created": "2023-03-27T01:30:04.286Z",
+    "_id": "ccc5c720-8e79-4f1f-806c-ae9158ac874b",
+    "colName": "Login",
+    "created": "2023-03-28T02:05:56.730Z",
     "sortNum": 40000,
-    "folders": [],
-    "settings": {
-      "headers": [],
-      "tests": []
-    }
+    "folders": []
   }
 ]

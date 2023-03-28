@@ -2,6 +2,8 @@
 const { models } = require('../libs/sequelize');
 // Libreria de encriptacion
 const bcrypt = require('bcrypt');
+// Validacion de errores
+const boom = require("@hapi/boom");
 
 class userService {
   constructor() {}
@@ -26,7 +28,7 @@ class userService {
   async findOne(id) {
     const findUser = await models.User.findByPk(id);
     if (!findUser) {
-      throw new Error('product not found');
+      throw boom.notFound('user not found');
     } else {
       return findUser;
     }
@@ -38,7 +40,7 @@ class userService {
         where: { email }
       });
       if (!findUser) {
-        throw new Error('product not found');
+        throw boom.notFound('user not found');
       } else {
         return findUser;
       }

@@ -12,6 +12,15 @@ function errorHandler(err, req, res, next) {
   });
 }
 
+function boomErrorHandler(err, req, res, next) {
+  if (err.isBoom) {
+    const { output } = err;
+    res.status(output.statusCode).json(output.payload);
+  } else {
+    next(err);
+  }
+}
+
 function ormErrorHandler(err, req, res, next){
   if(err instanceof ValidationError){
     res.status(409).json({
@@ -23,4 +32,4 @@ function ormErrorHandler(err, req, res, next){
   next(err);
 }
 
-module.exports = { logErrors, errorHandler, ormErrorHandler };
+module.exports = { logErrors, errorHandler, ormErrorHandler, boomErrorHandler };

@@ -30,7 +30,7 @@ const options = {
 }
 app.use(cors(options));
 
-require('./utils/auth');
+//require('./utils/auth');
 
 //iniciamos la app en la siguiente ruta
 app.get('/', (request, response) => {

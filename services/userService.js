@@ -39,11 +39,7 @@ class userService {
       const findUser = await models.User.findOne({
         where: { email }
       });
-      if (!findUser) {
-        throw boom.notFound('user not found');
-      } else {
-        return findUser;
-      }
+      return findUser;
     }
 
   // Update a user

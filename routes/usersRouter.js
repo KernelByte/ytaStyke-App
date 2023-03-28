@@ -1,18 +1,29 @@
 // Nos traemos a express
 const express = require('express');
-const router = express.Router();
 
 // Import services
 const userService = require('./../services/userService');
+const router = express.Router();
 
 // Se realiza instancia del servicio user
 const service = new userService();
 
 //create a user
-router.post('/', async (request, response) => {
+router.post('/', /*async (request, response) => {
   const bodyResponse = request.body;
-  response.status(201).json(await service.create(bodyResponse));
-});
+  response.status(201).json(await service.create(bodyResponse));*/
+  async (req, res, next) => {
+    try {
+      const bodyResponse = req.body;
+      const newUser = await service.create(bodyResponse);
+      res.status(201).json(newUser);
+    } catch (error) {
+      next(error);
+    }
+  }
+
+//}
+);
 
 // list users
 router.get('/', async (request, response) => {

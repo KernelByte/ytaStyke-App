@@ -116,13 +116,32 @@
     "method": "POST",
     "sortNum": 30000,
     "created": "2023-03-26T04:15:51.696Z",
-    "modified": "2023-03-27T21:08:45.998Z",
-    "headers": [],
+    "modified": "2023-03-28T21:32:21.149Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      },
+      {
+        "name": "jwt",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInJvbGUiOjEsImlhdCI6MTY4MDAzNTc3NH0.esXiP_CY7nneZB453L_53MO1rx2gr-mwZH7QshnRNpE"
+      }
+    ],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "  {\n    \"description\": \"Cliente\"\n  }",
+      "raw": "  {\n    \"description\": \"Usuario\"\n  }",
       "form": []
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInJvbGUiOjEsImlhdCI6MTY4MDAzNTc3NH0.esXiP_CY7nneZB453L_53MO1rx2gr-mwZH7QshnRNpE"
     },
     "tests": []
   },

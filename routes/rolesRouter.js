@@ -1,14 +1,19 @@
 // Se trae el modulo de express
 const express = require('express');
+// Importamos la libreria de passport para validar token
+const passport = require("passport");
 const router = express.Router();
 // Import service role
 const roleService = require('./../services/roleService');
 
 // instanciar un nuevo servicio del roleService
 const service = new roleService();
+const boom = require('@hapi/boom');
 
 //create a role
-router.post('/', async (request, response) => {
+router.post('/',
+  passport.authenticate('jwt',{session: false}),
+  async (request, response) => {
   const bodyResponse = request.body;
   response.status(201).json(await service.create(bodyResponse));
 });

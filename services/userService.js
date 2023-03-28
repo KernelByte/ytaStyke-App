@@ -32,6 +32,18 @@ class userService {
     }
   }
 
+    // Find one user to email
+    async findByEmail(email) {
+      const findUser = await models.User.findOne({
+        where: { email }
+      });
+      if (!findUser) {
+        throw new Error('product not found');
+      } else {
+        return findUser;
+      }
+    }
+
   // Update a user
   async update(id, changes) {
     // Busqueda del rol a actualizar

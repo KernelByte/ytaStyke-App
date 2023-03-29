@@ -1,0 +1,31 @@
+const jwt = require("jsonwebtoken");
+const { config } = require("./../../config/config.js");
+
+// Metodo encargado de generar un TOKEN USER
+const tokenGenerate = async (user) => {
+  return jwt.sign(
+    {
+      sub: user.id_user,
+      role: user.id_role_user,
+    },
+    config.jwtSecret,
+    {
+      expiresIn: "2h",
+    }
+  );
+};
+
+// Metodo encargado de verificar un TOKEN USER
+const tokenVerify = async (token) => {
+  try {
+    return jwt.verify(token, config.jwtSecret);
+  } catch (e) {
+    return null;
+  }
+};
+
+const decodeSign = (token) => {
+  return jwt.decode(token, null);
+};
+
+module.exports = { tokenGenerate, tokenVerify, decodeSign };

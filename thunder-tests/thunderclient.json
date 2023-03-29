@@ -88,9 +88,24 @@
     "method": "GET",
     "sortNum": 20000,
     "created": "2023-03-26T04:15:51.694Z",
-    "modified": "2023-03-26T04:28:46.072Z",
-    "headers": [],
+    "modified": "2023-03-29T19:55:18.126Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      }
+    ],
     "params": [],
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInJvbGUiOjEsImlhdCI6MTY4MDExOTcwOCwiZXhwIjoxNjgwMTI2OTA4fQ.XlS39-KOidEF7D5sSdOr_P1zKfXaigPuHmWTGQ9WkS4"
+    },
     "tests": []
   },
   {
@@ -116,13 +131,32 @@
     "method": "POST",
     "sortNum": 30000,
     "created": "2023-03-26T04:15:51.696Z",
-    "modified": "2023-03-27T21:08:45.998Z",
-    "headers": [],
+    "modified": "2023-03-28T21:32:21.149Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      },
+      {
+        "name": "jwt",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInJvbGUiOjEsImlhdCI6MTY4MDAzNTc3NH0.esXiP_CY7nneZB453L_53MO1rx2gr-mwZH7QshnRNpE"
+      }
+    ],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "  {\n    \"description\": \"Cliente\"\n  }",
+      "raw": "  {\n    \"description\": \"Usuario\"\n  }",
       "form": []
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInJvbGUiOjEsImlhdCI6MTY4MDAzNTc3NH0.esXiP_CY7nneZB453L_53MO1rx2gr-mwZH7QshnRNpE"
     },
     "tests": []
   },
@@ -196,12 +230,12 @@
     "method": "POST",
     "sortNum": 30000,
     "created": "2023-03-26T15:31:39.428Z",
-    "modified": "2023-03-28T00:34:02.110Z",
+    "modified": "2023-03-29T19:49:51.639Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "  {\n    \"number_id\": 1113629843,\n    \"name_user\":\"Alejandra Aguirre Giraldo\",\n    \"email\": \"aleja.aguirre09@gmail.com\",\n    \"password_user\": \"aleja123\",\n    \"id_role_user\": 1\n  }",
+      "raw": "  {\n    \"number_id\": 34445423,\n    \"name_user\":\"Maira Alejandra Lopez\",\n    \"email\": \"maleja2000@gmail.com\",\n    \"password_user\": \"12345789\",\n    \"id_role_user\": 3\n  }",
       "form": []
     },
     "tests": []
@@ -249,9 +283,13 @@
     "sortNum": 10000,
     "created": "2023-03-28T02:06:15.755Z",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "modified": "2023-03-28T14:23:17.964Z",
 =======
     "modified": "2023-03-28T17:19:34.699Z",
+>>>>>>> desarrollo
+=======
+    "modified": "2023-03-29T19:55:08.488Z",
 >>>>>>> desarrollo
     "headers": [],
     "params": [],

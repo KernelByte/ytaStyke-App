@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt');
 const UserService = require('./../services/userService');
 const service = new UserService();
+const { tokenGenerate } = require('../utils/auth/generateToken');
 
 const loginService = async (req, res) => {
   try {
@@ -15,14 +16,13 @@ const loginService = async (req, res) => {
 
     const checkPassword = await bcrypt.compare(password, user.password_user);
 
-    //TODO JWT
-    //const tokenSession = await tokenSign(user) //TODO: 2d2d2d2d2d2d2
-
     if (checkPassword) {
+      const tokenSession = await tokenGenerate(user);
+
       delete user.dataValues.password_user;
       res.send({
         data: user,
-        //tokenSession
+        token: tokenSession,
       });
       return;
     }

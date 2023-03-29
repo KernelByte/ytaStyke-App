@@ -10,11 +10,12 @@ const service = new userService();
 
 // Validaciones para el user
 const validatorHandler = require('./../middlewares/validatorHandler');
-const {
+
+/*const {
   updateUserSchema,
   createUserSchema,
   getUserSchema,
-} = require('./../schemas/userSchema');
+} = require('./../schemas/userSchema');*/
 
 //create a user
 router.post(
@@ -53,8 +54,8 @@ router.get('/:id', async (request, response) => {
 //Update user
 router.patch(
   '/:id',
-  validatorHandler(getUserSchema, 'params'),
-  validatorHandler(updateUserSchema, 'body'),
+  //validatorHandler(getUserSchema, 'params'),
+  //validatorHandler(updateUserSchema, 'body'),
   async (request, response, next) => {
     try {
       // se recibe id
@@ -72,7 +73,7 @@ router.patch(
 //delete user
 router.delete(
   '/:id',
-  validatorHandler(getUserSchema, 'params'),
+  //validatorHandler(getUserSchema, 'params'),
   async (request, response, next) => {
     try {
       // se recibe id

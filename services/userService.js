@@ -11,7 +11,7 @@ class userService {
   // Create a user
   async create(user) {
     const hash = await bcrypt.hash(user.password_user, 10);
-    const queryNewUser = await models.User.create({
+     await models.User.create({
       ...user,
       password_user: hash,
     });

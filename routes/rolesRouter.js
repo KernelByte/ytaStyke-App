@@ -7,7 +7,7 @@ const router = express.Router();
 const roleService = require('./../services/roleService');
 // instanciar un nuevo servicio del roleService
 const service = new roleService();
-const { checkAuth } = require('../middlewares/authHandler');
+const { checkAuth, checkRoleAuth } = require('../middlewares/authHandler');
 
 //create a role
 router.post(
@@ -20,7 +20,7 @@ router.post(
 );
 
 // list roles
-router.get('/', checkAuth, async (request, response) => {
+router.get('/', checkAuth, checkRoleAuth(['1']), async (request, response) => {
   const roles = await service.find();
   response.json(roles);
 });

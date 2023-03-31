@@ -2,16 +2,11 @@
 const express = require('express');
 const router = express.Router();
 
+const { sendEmail } = require("../utils/sendEmail");
 const { loginService } = require("./../services/authService");
 
 router.post('/login', loginService);
 
-router.post('/recovery', async (req, res, next) => {
-  try {
-    const { email } = req.body;
-  } catch (error) {
-
-  }
-});
+router.post('/recovery', sendEmail);
 
 module.exports = router;

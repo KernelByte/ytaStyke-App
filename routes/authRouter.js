@@ -2,10 +2,11 @@
 const express = require('express');
 const router = express.Router();
 
+const { resetPassword } = require("../utils/sendEmail");
 const { loginService } = require("./../services/authService");
 
 router.post('/login', loginService);
 
-//router.post('/register', registreService);
+router.post('/recovery', resetPassword);
 
 module.exports = router;

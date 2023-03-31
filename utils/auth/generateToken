@@ -15,6 +15,20 @@ const tokenGenerate = async (user) => {
   );
 };
 
+// Metodo encargado de generar un TOKEN USER de recuperacion
+const tokenGenerateRecovery = async (user) => {
+  return jwt.sign(
+    {
+      sub: user.id_user,
+      role: user.id_role_user,
+    },
+    config.jwtSecret_recovery,
+    {
+      expiresIn: "15min",
+    }
+  );
+};
+
 // Metodo encargado de verificar un TOKEN USER
 const tokenVerify = async (token) => {
   try {
@@ -28,4 +42,4 @@ const decodeSign = (token) => {
   return jwt.decode(token, null);
 };
 
-module.exports = { tokenGenerate, tokenVerify, decodeSign };
+module.exports = { tokenGenerate, tokenVerify, decodeSign, tokenGenerateRecovery };

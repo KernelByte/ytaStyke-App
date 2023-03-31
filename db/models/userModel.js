@@ -33,6 +33,11 @@ const UserSchema = {
     type: DataTypes.STRING,
   },
 
+  recovery_token: {
+    allowNull: true,
+    type: DataTypes.STRING,
+  },
+
   id_role_user: {
     allowNull: false,
     type: DataTypes.INTEGER,

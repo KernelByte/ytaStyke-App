@@ -22,7 +22,7 @@ const tokenGenerateRecovery = async (user) => {
       sub: user.id_user,
       role: user.id_role_user,
     },
-    config.jwtSecret,
+    config.jwtSecret_recovery,
     {
       expiresIn: "15min",
     }

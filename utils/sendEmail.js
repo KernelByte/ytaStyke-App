@@ -53,6 +53,8 @@ const resetPassword = async (req, res) => {
 
       const tokenSession = await tokenGenerateRecovery(user);
       const link = `http://myfrontend.com/recovery?token=${tokenSession}`;
+      // TODO: Se actualiza el campo token para mayor seguridad.
+      await service.update(user.id_user,{recovery_token : tokenSession});
 
       // create reusable transporter object using the default SMTP transport
       let transporter = nodemailer.createTransport({

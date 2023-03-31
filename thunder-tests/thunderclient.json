@@ -282,12 +282,12 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2023-03-28T02:06:15.755Z",
-    "modified": "2023-03-29T19:55:08.488Z",
+    "modified": "2023-03-31T16:33:39.609Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"email\": \"aleja.aguirre09@gmail.com\",\n  \"password\": \"aleja123\"\n}",
+      "raw": "{\n  \"email\": \"yonihermelendez@gmail.com\",\n  \"password\": \"123456789\"\n}",
       "form": []
     },
     "tests": []
@@ -301,12 +301,31 @@
     "method": "POST",
     "sortNum": 20000,
     "created": "2023-03-31T05:03:21.580Z",
-    "modified": "2023-03-31T09:06:34.950Z",
+    "modified": "2023-03-31T16:01:08.470Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
       "raw": "{\n  \"email\":\"yonihermelendez@gmail.com\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "019fdf87-5dc5-4a20-ae6c-e051a54b7745",
+    "colId": "ccc5c720-8e79-4f1f-806c-ae9158ac874b",
+    "containerId": "",
+    "name": "change-pass",
+    "url": "http://localhost:3000/api/v1/auth/change-pass",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2023-03-31T15:53:02.893Z",
+    "modified": "2023-03-31T16:33:23.198Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsInJvbGUiOjEsImlhdCI6MTY4MDI4MDM1NCwiZXhwIjoxNjgwMjg3NTU0fQ.k-I7Svj3gtQMbhCLiDDYCL3crlJo8cphbTpdXXjb_14\",\n  \"newPassword\": \"123456789\"\n}",
       "form": []
     },
     "tests": []

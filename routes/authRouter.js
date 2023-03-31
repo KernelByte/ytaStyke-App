@@ -6,6 +6,12 @@ const { loginService } = require("./../services/authService");
 
 router.post('/login', loginService);
 
-//router.post('/register', registreService);
+router.post('/recovery', async (req, res, next) => {
+  try {
+    const { email } = req.body;
+  } catch (error) {
+
+  }
+});
 
 module.exports = router;

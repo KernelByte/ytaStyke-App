@@ -30,9 +30,9 @@ const tokenGenerateRecovery = async (user) => {
 };
 
 // Metodo encargado de verificar un TOKEN USER
-const tokenVerify = async (token) => {
+const tokenVerify = async (token,llave) => {
   try {
-    return jwt.verify(token, config.jwtSecret);
+    return jwt.verify(token, llave);
   } catch (e) {
     return null;
   }

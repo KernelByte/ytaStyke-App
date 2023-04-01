@@ -25,7 +25,7 @@ async function checkAuth(req, res, next) {
   try {
     // TODO: Se captura el token del bearer
     const token = req.headers.authorization.split(' ').pop();
-    const tokenData = await tokenVerify(token);
+    const tokenData = await tokenVerify(token,config.jwtSecret);
     if (tokenData.sub) {
       next();
     } else {
@@ -43,7 +43,7 @@ async function checkAuth(req, res, next) {
 const checkRoleAuth = (roles) => async (req, res, next) => {
   try {
     const token = req.headers.authorization.split(' ').pop();
-    const tokenData = await tokenVerify(token);
+    const tokenData = await tokenVerify(token,config.jwtSecret);
     const userData = await service.findOne(tokenData.sub);
 
     if (roles == userData.id_role_user) {
